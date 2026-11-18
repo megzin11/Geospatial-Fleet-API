@@ -14,7 +14,7 @@ This service simulates a resource-constrained **edge node** that drops redundant
 ```mermaid
 flowchart LR
     A[Fintraffic Live AIS Broker<br/>MQTT over WSS] -->|vessels-v2/+/location| B[Edge Ingestor<br/>live_ais_ingestor.py]
-    B -->|Sentinel Filter &<br/>Kinematic Anomaly Proxy| C[FastAPI Microservice<br/>Docker: python:3.12-slim]
+    B -->|Sentinel Filter &<br/>Kinematic Anomaly Proxy| C[FastAPI Microservice<br/>Docker: python:3.15-slim]
     C --> D{ai_anomaly_flag == true?}
     D -->|Yes| E[RETAINED<br/>Anomaly Override]
     D -->|No| F{Geodesic Δ < 50m?}
