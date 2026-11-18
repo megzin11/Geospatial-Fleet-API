@@ -1,6 +1,6 @@
-# VesselEdge: Anomaly-Aware Spatiotemporal Compression Microservice
+# FleetEdge: Anomaly-Aware Spatiotemporal Compression Microservice
 
-A containerized FastAPI microservice that applies **Bandwidth-Constrained Dead Reckoning with Anomalies (BWC-DR-A)** to high-frequency mobility telemetry streams.
+A containerized FastAPI microservice that applies **anomaly-aware geodesic Dead Reckoning (inspired by BWC-DR-A)** to high-frequency mobility telemetry streams.
 
 ## Problem Statement
 Moving IoT assets (maritime vessels, rail fleets, and connected vehicles) broadcast high-frequency GNSS/AIS updates every 2–10 seconds. Relaying raw streams over constrained wireless links (satellite, maritime VDES/HF, or cellular dead zones) saturates uplink bandwidth and inflates storage costs. Conversely, naive spatial downsampling risks discarding the exact low-displacement, high-risk maneuvers (e.g., sudden turns, drifting, or emergency braking) required for operational monitoring.

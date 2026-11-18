@@ -4,7 +4,7 @@ from geopy.distance import geodesic
 from typing import List, Dict
 
 api = FastAPI(
-    title="VesselEdge: Spatiotemporal Compression API",
+    title="FleetEdge: Anomaly-Aware Trajectory Compression API",
     description="Edge-native FastAPI microservice implementing BWC-DR-A trajectory compression for high-frequency fleet tracking.",
     version="2.0.0"
 )
@@ -26,7 +26,7 @@ class TelemetryPayload(BaseModel):
     latitude: float
     longitude: float
     speed_kmh: float
-    ai_anomaly_flag: bool  # Simulating an on-device M3fed ML intercept
+    ai_anomaly_flag: bool  # Upstream edge anomaly detector flag
 
 @api.post("/telemetry", status_code=201)
 def ingest_and_compress(payload: TelemetryPayload):
